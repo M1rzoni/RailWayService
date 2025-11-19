@@ -1,14 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
-app.use(express.json());
+app.use(cors());
 
 const artikli = [
     { sifra: "H120032", naziv: "Cokolada 320g", cijena: "30", jm: "kom" },
     { sifra: "H109932", naziv: "Mlijeko 3.2", cijena: "1.20", jm: "kom" }
 ];
 
-app.post('/artikli', (req, res) => {
+app.post('/', (req, res) => {
     const { PJ, SIFRA_ARTIKLA } = req.body;
 
     if (!PJ || !SIFRA_ARTIKLA) {
@@ -30,6 +31,6 @@ app.post('/artikli', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`API radi na portu ${PORT}`));
