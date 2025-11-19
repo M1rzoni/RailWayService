@@ -10,6 +10,11 @@ const artikli = [
     { sifra: "H109932", naziv: "Mlijeko 3.2", cijena: "1.20", jm: "kom" }
 ];
 
+app.get("/", (req,res) =>{
+   res.json({message: "hello"})
+})
+
+
 app.post('/', (req, res) => {
     const { PJ, SIFRA_ARTIKLA } = req.body;
 
