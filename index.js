@@ -5,6 +5,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+console.log(process.env.PORT);
+
 const artikli = [
     { sifra: "H120032", naziv: "Cokolada 320g", cijena: "30", jm: "kom" },
     { sifra: "H109932", naziv: "Mlijeko 3.2", cijena: "1.20", jm: "kom" }
@@ -12,6 +14,7 @@ const artikli = [
 
 app.get("/", (req,res) =>{
    res.json({message: "hello"})
+   
 })
 
 
