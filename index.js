@@ -18,7 +18,7 @@ app.get("/", (req,res) =>{
 })
 
 
-app.post('/artikli', (req, res) => {
+app.post('/', (req, res) => {
     const { PJ, SIFRA_ARTIKLA } = req.body;
 
     if (!PJ || !SIFRA_ARTIKLA) {
