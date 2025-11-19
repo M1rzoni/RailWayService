@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const artikli = [
     { sifra: "H120032", naziv: "Cokolada 320g", cijena: "30", jm: "kom" },
